@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>Tax Calculator</h1>
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="grossIncome">Gross Annual Income:</label>
+                <input type="number" class="form-control" id="grossIncome" required>
+                <span class="error-icon" id="grossIncomeError">!</span>
+            </div>
+            <div class="form-group">
+                <label for="extraIncome">Extra Income:</label>
+                <input type="number" class="form-control" id="extraIncome">
+                <span class="error-icon" id="extraIncomeError">!</span>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Deductions:</label>
+                <input type="number" class="form-control" id="deductions">
+                <span class="error-icon" id="deductionsError">!</span>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select class="form-control" id="age" required>
+                    <option value="">Select Age Range</option>
+                    <option value="<40">&lt; 40</option>
+                    <option value=">=40&<60">&ge; 40 &lt; 60</option>
+                    <option value=">=60">&ge; 60</option>
+                </select>
+                <span class="error-icon" id="ageError">Age is required!</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate Tax</button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">Tax Calculation Result</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Result will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
